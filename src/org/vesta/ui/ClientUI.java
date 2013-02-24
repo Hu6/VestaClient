@@ -33,8 +33,8 @@ public class ClientUI extends JFrame implements WindowListener {
         addWindowListener(this);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setTitle("VestaClient for RS2 by Jimmy5410 -- Edited for Oldscape by Longbottom/!Hu6");
-       // URL imageURL = getClass().getResource("/icon.png");
-        //setIconImage(new ImageIcon(imageURL).getImage());
+        URL imageURL = getClass().getResource("icon.png");
+        setIconImage(new ImageIcon(imageURL).getImage());
         try {
             loader = new RSLoader(world, signed);
             Applet applet = loader.getApplet();
