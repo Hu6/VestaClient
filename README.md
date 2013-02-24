@@ -6,7 +6,7 @@ To do this, right click on your java project and selecte Properties->Java Build 
 Screenshot
 ==========
 
-
+![Screenshot](https://raw.github.com/Hu6/VestaClient/master/Screenshot.png)
 
 VestaClient 0.02
 =========
@@ -18,7 +18,7 @@ http://commons.apache.org/bcel/download_bcel.cgi
 Add the downloaded jar to you Eclipse libraries
 To do this, right click on your java project and selecte Properties->Java Build Path->Libraries->Add External Jars
 
-==============
+==========
 
 How to use
 ------------
