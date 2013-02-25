@@ -1,7 +1,7 @@
 Download
 ==========
 
-https://github.com/Hu6/VestaClient/raw/master/VestaClient0.02.jar
+Get it [here](https://github.com/Hu6/VestaClient/raw/master/VestaClient0.02.jar).
 
 Screenshot
 ==========
@@ -20,3 +20,7 @@ To do this, right click on your java project and selecte Properties->Java Build 
 How to use
 ------------
 * Simply click on the jar file to launch it. It takes a moment or two to launch, but once initialized it should load the login screen very quickly.
+
+***
+
+### [GPLv3 License](http://www.gnu.org/licenses/gpl.txt)
