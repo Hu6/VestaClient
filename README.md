@@ -24,3 +24,7 @@ How to use
 ***
 
 ### [GPLv3 License](http://www.gnu.org/licenses/gpl.txt)
+
+### [Apache License](http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+### [Compatibility of Apache License and GPLv3 License Explained](www.apache.org/licenses/GPL-compatibility.html)
