@@ -1,7 +1,7 @@
 Download
 -------------------------------
 
-Get it [here](https://github.com/Hu6/VestaClient/raw/master/VestaClient0.02.jar). The original source and client can be found [here](http://code.google.com/p/vestaclient/) Many thanks to jimmy5410 for the original client.
+Get it [here](https://github.com/Hu6/VestaClient/raw/master/VestaClient0.02.jar). The original source and client can be found [here](http://code.google.com/p/vestaclient/). Many thanks to jimmy5410 for the original client.
 
 Screenshot
 -------------------------------
