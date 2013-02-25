@@ -27,4 +27,4 @@ How to use
 
 ### [Apache License](http://www.apache.org/licenses/LICENSE-2.0.txt)
 
-### [Compatibility of Apache License and GPLv3 License Explained](www.apache.org/licenses/GPL-compatibility.html)
+### [Compatibility of Apache License and GPLv3 License Explained](http://www.apache.org/licenses/GPL-compatibility.html)
