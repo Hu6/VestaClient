@@ -20,7 +20,7 @@ public class RSLoader {
     private JarClassLoader classLoader;
 
     public RSLoader(int world, boolean signed) throws Exception {
-        String prefix = "oldschool77";
+        String prefix = "oldschool6";
         if(signed) {
             classLoader = new JarClassLoader(
                 ((JarURLConnection)(new URL("jar:http://" + prefix + ".runescape.com/gamepack_5462530.jar!/")).openConnection()).getJarFile()

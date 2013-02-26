@@ -44,7 +44,7 @@ public class RSStub implements AppletStub, AppletContext {
 
     private void loadParams(String prefix) throws IOException {
         params = new Properties();
-        prefix="oldschool77";
+        prefix="oldschool6";
         codeBase = new URL("http://" + prefix + ".runescape.com/j1");
 
         URLConnection connect = codeBase.openConnection();
