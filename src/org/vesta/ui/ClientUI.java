@@ -39,7 +39,15 @@ public class ClientUI extends JFrame implements WindowListener {
         try {
             loader = new RSLoader(world, game, signed);
             Applet applet = loader.getApplet();
-            applet.setPreferredSize(new Dimension(765, 503));
+            if(game==0)
+            {
+            	applet.setPreferredSize(new Dimension(512, 345));
+            }
+            else if(game==1)
+            {
+            	applet.setPreferredSize(new Dimension(765, 503));
+            }
+            
             getContentPane().add(applet, BorderLayout.CENTER);
         } catch (Exception e) {
             setVisible(false);
