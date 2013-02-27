@@ -31,112 +31,129 @@ import java.util.Vector;
  */
 public class RSStub implements AppletStub, AppletContext {
 
-    private URL codeBase;
-    private Applet applet;
-    private Properties params;
-    private Map<String, InputStream> inputMap;
+	private int game;
+	private int world;
+	private URL codeBase;
+	private Applet applet;
+	private Properties params;
+	private Map<String, InputStream> inputMap;
 
-    public RSStub(String prefix, Applet applet) throws IOException {
-        loadParams(prefix);
-        this.applet = applet;
-        this.inputMap = new HashMap<String, InputStream>();
-    }
+	public RSStub(String prefix, Applet applet, int world, int game) throws IOException {
+		this.game=game;
+		this.world=world;
+		loadParams(prefix);
+		this.applet = applet;
+		this.inputMap = new HashMap<String, InputStream>();
+	}
 
-    private void loadParams(String prefix) throws IOException {
-        params = new Properties();
-        prefix="oldschool6";
-        codeBase = new URL("http://" + prefix + ".runescape.com/j1");
+	private void loadParams(String prefix) throws IOException {
+		params = new Properties();
+		if(game==0)
+		{
+			prefix="classic";
+			codeBase = new URL("http://" + prefix + world + "a.runescape.com/j0");
+		}
+		else if(game==1)
+		{
+			prefix="oldschool";
+			codeBase = new URL("http://" + prefix + world + ".runescape.com/j1");
+		}
+		else
+		{
+			prefix="world";
+			codeBase = new URL("http://" + prefix + world + ".runescape.com/j0");
+		}
 
-        URLConnection connect = codeBase.openConnection();
-        InputStream in = connect.getInputStream();
-        Reader reader = new InputStreamReader(in);
-        BufferedReader bufRead = new BufferedReader(reader);
+		URLConnection connect = codeBase.openConnection();
+		InputStream in = connect.getInputStream();
+		Reader reader = new InputStreamReader(in);
+		BufferedReader bufRead = new BufferedReader(reader);
 
-        String line = "";
-        while ((line = bufRead.readLine()) != null) {
-            if (line.contains("param")) {
-                String preName = line.substring(line.indexOf("<param name=") + 12);
-                String name = preName.substring(0, preName.indexOf(" "));
+		String line = "";
+		while ((line = bufRead.readLine()) != null) {
+			if (line.contains("param")) {
+				String preName = line.substring(line.indexOf("<param name=") + 12);
+				String name = preName.substring(0, preName.indexOf(" "));
 
-                String preValue = line.substring(line.indexOf("value=") + 6);
-                String value = preValue.substring(0, preValue.indexOf(">"));
+				String preValue = line.substring(line.indexOf("value=") + 6);
+				String value = preValue.substring(0, preValue.indexOf(">"));
 
-                if (name.contains("\"") || value.contains("\"")) {
-                    name = name.replaceAll("\"", "");
-                    value = value.replaceAll("\"", "");
-                }
+				if (name.contains("\"") || value.contains("\"")) {
+					name = name.replaceAll("\"", "");
+					value = value.replaceAll("\"", "");
+				}
 
-                params.setProperty(name, value);
-            }
-        }
-    }
+				params.setProperty(name, value);
+			}
+		}
+	}
 
-    public void appletResize(int width, int height) {
-    }
+	public void appletResize(int width, int height) {
+	}
 
-    public AppletContext getAppletContext() {
-        return this;
-    }
+	public AppletContext getAppletContext() {
+		return this;
+	}
 
-    public URL getCodeBase() {
-        return codeBase;
-    }
+	public URL getCodeBase() {
+		return codeBase;
+	}
 
-    public URL getDocumentBase() {
-        return codeBase;
-    }
+	public URL getDocumentBase() {
+		return codeBase;
+	}
 
-    public String getParameter(String name) {
-        return params.getProperty(name);
-    }
+	public String getParameter(String name) {
+		return params.getProperty(name);
+	}
 
-    public boolean isActive() {
-        return false;
-    }
+	public boolean isActive() {
+		return false;
+	}
 
-    public Applet getApplet(String name) {
-        if(name.equals("runescape"))
-            return applet;
-        return null;
-    }
+	public Applet getApplet(String name) {
+		if(name.equals("runescape"))
+			return applet;
+		return null;
+	}
 
-    public Enumeration<Applet> getApplets() {
-        Vector<Applet> applets = new Vector<Applet>(1);
-        applets.add(applet);
-        return applets.elements();
-    }
+	public Enumeration<Applet> getApplets() {
+		Vector<Applet> applets = new Vector<Applet>(1);
+		applets.add(applet);
+		return applets.elements();
+	}
 
-    public AudioClip getAudioClip(URL url) {
-        return Applet.newAudioClip(url);
-    }
+	public AudioClip getAudioClip(URL url) {
+		return Applet.newAudioClip(url);
+	}
 
-    public Image getImage(URL url) {
-        return Toolkit.getDefaultToolkit().getImage(url);
-    }
+	public Image getImage(URL url) {
+		return Toolkit.getDefaultToolkit().getImage(url);
+	}
 
-    public InputStream getStream(String key) {
-        return inputMap.get(key);
-    }
+	public InputStream getStream(String key) {
+		return inputMap.get(key);
+	}
 
-    public Iterator<String> getStreamKeys() {
-        return inputMap.keySet().iterator();
-    }
+	public Iterator<String> getStreamKeys() {
+		return inputMap.keySet().iterator();
+	}
 
-    public void setStream(String key, InputStream stream) throws IOException {
-        inputMap.put(key, stream);
-    }
+	public void setStream(String key, InputStream stream) throws IOException {
+		inputMap.put(key, stream);
+	}
 
-    public void showDocument(URL url) {
-        if(url != null)
-            System.out.println(url.toString());
-    }
+	public void showDocument(URL url) {
+		if(url != null)
+			System.out.println(url.toString());
+	}
 
-    public void showDocument(URL url, String target) {
-    	showDocument(url);
-    }
+	public void showDocument(URL url, String target) {
+		showDocument(url);
+	}
 
-    public void showStatus(String status) {
-        System.out.println(status);
-    }
+	public void showStatus(String status) {
+		System.out.println(status);
+	}
 
 }

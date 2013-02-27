@@ -5,12 +5,12 @@
 
 package org.vesta;
 
-import org.vesta.ui.WorldSelector;
+import org.vesta.ui.GameAndWorldSelector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
+//import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -31,7 +31,7 @@ public class Main {
                 } catch (Exception ex) {
                     Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                new WorldSelector();
+                new GameAndWorldSelector();
             }
         });
     }

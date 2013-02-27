@@ -4,7 +4,7 @@
  */
 package org.vesta.loader;
 
-import java.io.ByteArrayOutputStream;
+//import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -73,6 +73,7 @@ public class JarClassLoader extends ClassLoader {
      * @return A byte[] from the fully read InputStream.
      * @throws IOException If an IOException occurs while reading the InputStream.
      */
+    /*
     private static byte[] readFully(InputStream in) throws IOException {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         int read = -1;
@@ -82,6 +83,7 @@ public class JarClassLoader extends ClassLoader {
         }
         return out.toByteArray();
     }
+    */
 
     /**
      *

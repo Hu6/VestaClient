@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
  *
  * @author James
  */
+@SuppressWarnings("serial")
 public class ClientUI extends JFrame implements WindowListener {
 
     private RSLoader loader;
@@ -28,7 +29,7 @@ public class ClientUI extends JFrame implements WindowListener {
      * @param world The world to load.
      * @param signed Should the client be a signed, or unsiged client?
      */
-    public ClientUI(int world, boolean signed) {
+    public ClientUI(int world, int game, boolean signed) {
         super();
         addWindowListener(this);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -36,7 +37,7 @@ public class ClientUI extends JFrame implements WindowListener {
         URL imageURL = getClass().getResource("icon.png");
         setIconImage(new ImageIcon(imageURL).getImage());
         try {
-            loader = new RSLoader(world, signed);
+            loader = new RSLoader(world, game, signed);
             Applet applet = loader.getApplet();
             applet.setPreferredSize(new Dimension(765, 503));
             getContentPane().add(applet, BorderLayout.CENTER);
