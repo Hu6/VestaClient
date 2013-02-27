@@ -3,10 +3,11 @@ Download
 
 Get it [here](https://github.com/Hu6/VestaClient/raw/master/VestaClient0.02.jar). The original source and client can be found [here](http://code.google.com/p/vestaclient/). Many thanks to jimmy5410 for the original client.
 
-Screenshot
+Screenshots
 -------------------------------
 
-![Screenshot](https://raw.github.com/Hu6/VestaClient/master/Screenshot.png)
+![Runescape Classic](https://raw.github.com/Hu6/VestaClient/master/RSC.png)
+![Runescape 2007](https://raw.github.com/Hu6/VestaClient/master/RS2007.png)
 
 How to compile
 -------------------------------
